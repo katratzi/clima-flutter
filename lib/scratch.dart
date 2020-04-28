@@ -4,9 +4,9 @@ void main() {
   performTasks();
 }
 
-void performTasks() {
+void performTasks() async {
   task1();
-  String task2result = task2();
+  String task2result = await task2();
   task3(task2result);
 }
 
@@ -15,12 +15,12 @@ void task1() {
   print('Task 1 complete');
 }
 
-String task2() {
+Future task2() async {
   Duration threeSeconds = Duration(seconds: 3);
 
   String result;
   // sleep(threeSeconds);
-  Future.delayed(threeSeconds, () {
+  await Future.delayed(threeSeconds, () {
     result = 'task 2 data';
     print('Task 2 complete');
   });
