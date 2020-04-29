@@ -18,6 +18,18 @@ void exceptionHandlingTest() {
   // handy shortcut - if number is null...use alternative
   // null aware operator
   print(number ?? 123);
+
+  try {
+    somethingThatExpectsLessThan10(12);
+  } catch (e) {
+    print(e);
+  }
+}
+
+void somethingThatExpectsLessThan10(int n) {
+  if (n > 10) {
+    throw 'n is greated than 10, n should always be less than 10.';
+  }
 }
 
 void performTasks() async {
