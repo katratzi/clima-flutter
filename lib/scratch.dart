@@ -1,7 +1,23 @@
 import 'dart:io';
 
 void main() {
-  performTasks();
+  // performTasks();
+  exceptionHandlingTest();
+}
+
+void exceptionHandlingTest() {
+  String text = 'abc';
+  double number;
+  try {
+    number = double.parse(text);
+  } catch (e) {
+    // short for exception
+    print('Bad programmer...no biscuit');
+  }
+
+  // handy shortcut - if number is null...use alternative
+  // null aware operator
+  print(number ?? 123);
 }
 
 void performTasks() async {
